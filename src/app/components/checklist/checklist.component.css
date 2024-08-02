@@ -1,0 +1,226 @@
+.header {
+  border-bottom: 1px solid #e9eaec;
+  width: Fixed (390px) px;
+  height: Hug (56px) px;
+  padding: 16px 20px 16px 0px;
+  padding-left: 8rem;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+  background: #ffffff;
+}
+@media (max-width: 768px) {
+  .header {
+    width: Fixed (390px) px;
+    height: Hug (56px) px;
+    padding: 16px 20px 16px 20px;
+    gap: 0px;
+    justify-content: space-between;
+    opacity: 0px;
+    box-shadow: 0px 7px 18px 0px #00000008;
+    background: #ffffff;
+  }
+  .checklist {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    padding-left: 2px;
+  }
+  .hello {
+    color: #000000;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+}
+.checklist {
+  font-size: 27.39px;
+  font-weight: 400;
+  line-height: 41.08px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #000000;
+  padding-left: 3px;
+}
+.hello {
+  color: #000000;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: left;
+  padding-left: 8.5rem;
+}
+.start {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  padding-left: 8.5rem;
+  padding-top: 4px;
+  color: #7c828b;
+}
+@media (max-width: 768px) {
+  .hello {
+    color: #000000;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: left;
+    padding-left: 27px;
+    padding-top: 20px;
+  }
+  .start {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #7c828b;
+    padding-left: 27px;
+    padding-top: 4px;
+  }
+}
+.card {
+  margin: 20px 20px 0px 20px;
+  border-radius: 12px;
+  opacity: 0px;
+  background: #ffffff;
+  padding: 5%;
+  /* width: 18rem; */
+}
+.main {
+  background: #f0f0f0 !important;
+  height: 100%;
+}
+.card-header {
+  background-color: #fff;
+}
+.checklist-title {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+}
+.title-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #181818;
+  border: none;
+  width: 100%;
+  outline: none;
+  flex-grow: 1;
+}
+.title-text ::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #b4b4b4;
+}
+.title-list {
+  list-style: none;
+  padding: 0;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.task-checkbox {
+  margin-right: 8px;
+}
+.title-text.completed {
+  text-decoration: line-through;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #181818;
+  border: none;
+  width: 100%;
+  outline: none;
+  flex-grow: 1;
+}
+.card-footer {
+  padding: 0;
+  border-top: 1px solid #b9b9b9;
+  background-color: #ffffff;
+}
+.completed-tasks {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #7e7e7e;
+  padding-left: 8px;
+}
+.add-task {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #000000;
+  padding-left: 8px;
+}
+.addtaskplus {
+  padding-left: 0px;
+}
+.foot {
+  padding-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .signup {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .signup {
+    margin-left: 10rem;
+  }
+}
+.signupcard {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--Base-Background, #ffffff);
+  border: 1px solid #e3e3e3;
+  box-shadow: 0px 4px 12.7px 0px #0000000a;
+  position: fixed;
+  top: 18%;
+  left: 56%;
+  transform: translate(-50%, -50%);
+  z-index: 999; 
+}
+.polygon {
+  width: 19px;
+  height: 19px;
+  top: 117px;
+  left: 354px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  --angle: 120 deg;
+  background: #ffffff;
+  border: 1px solid;
+  border-image-source: linear-gradient(300deg, #e3e3e3 56.55%, #ffffff 58.47%);
+}
+.modal-body{
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
