@@ -19,7 +19,6 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
             <div class="card">
                 <input type="text" class="checklist-title" value="Untitled" placeholder="Untitled" />
                 <div class="card-body">
@@ -27,6 +26,7 @@
                     <li *ngFor="let task of todolist; let i = index" class="task-item">                       
                         <input type="checkbox" class="task-checkbox" [(ngModel)]="task.completed" (change)="onCompleteTask(task)" />
                         <input type="text" placeholder="Title..." class="title-text" [(ngModel)]="task.title" [ngClass]="{'completed': task.completed}" />
+                        <img src="Trash.png" alt="" width="16" height="16" (click)="deleteTask(task)" class="delete" />
                     </li>                 
                   </ul>
                 </div>
@@ -43,30 +43,37 @@
                     </div>
                 </div>
               </div>
-        </div>
+    
+            <div class="signUp-card" style="width: 18rem;" >
+                <div class="card-body">      
+                  <p class="card-text">Sign up to unlock recurring tasks, publishing, collaborating and more.</p>
+                  <button class="btn btn-primary signup-btn">Sign up</button>
+                </div>
+            </div>
+  
     </div>
 </div>
-  
+
 <div class="signupcard" style="width: 18rem;" *ngIf="showSignUp">
     <div class="card-body">      
       <p class="card-text">Sign up to unlock recurring tasks, publishing, collaborating and more.</p>
-      <a href="#" class="btn btn-primary">Sign up</a>
+      <button class="btn btn-primary signup-btn">Sign up</button>
     </div>
-  </div>
+</div>
 
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">New Task</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <!-- <input type="checkbox" class="task-checkbox"  [(ngModel)]="newTask.completed"/> -->
-            <input type="text" placeholder="Title..." class="title-text" [(ngModel)]="newTask.title" />
+            <input type="text" placeholder="New Task..." class="title-text" [(ngModel)]="newTask.title" />
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-primary" (click)="addTask()" data-bs-dismiss="modal" >Save</button>
         </div>
       </div>

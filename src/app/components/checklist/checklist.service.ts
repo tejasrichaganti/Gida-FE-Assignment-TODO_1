@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, tap, throwError } from 'rxjs';
 import { ToDos } from '../../models/ToDos';
 
 @Injectable({
@@ -13,7 +13,6 @@ export class ChecklistService {
   getToDOs(): Observable<ToDos[]> {
     return this.http.get<ToDos[]>(this.apiUrl).pipe(
       map((resp: ToDos[]) => {
-        // console.log(resp);
         return resp;
       })
     );
@@ -43,8 +42,9 @@ export class ChecklistService {
   updateTodo(task: ToDos): Observable<ToDos> {
 
     const url = `${this.apiUrl}/${task.id}`;
+    console.log(url);
     return this.http.put<ToDos>(url, task).pipe(
-      map((res) => {
+      tap((res) => {
         let taskItemsList: ToDos[] = JSON.parse(localStorage.getItem('todos') || '[]');
         if (task.completed) {
           taskItemsList = taskItemsList.filter((item) => item.id !== task.id);

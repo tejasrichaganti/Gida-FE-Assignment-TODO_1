@@ -57,13 +57,19 @@ export class ChecklistComponent implements OnInit {
     );
   }
   onCompleteTask(task:ToDos){
-    this.checklistService.updateTodo(task).subscribe(
-      response => {
-        this.getToDoList();        
-      },
-      error => {
-        console.error('Error adding task:', error);
-      }
-    )
+    let taskItemsList: ToDos[] = JSON.parse(localStorage.getItem('todos') || '[]');
+    if (task.completed) {
+      taskItemsList = taskItemsList.filter((item) => item.id !== task.id);
+    }
+    localStorage.setItem('todos', JSON.stringify(taskItemsList));
+    this.getToDoList(); 
   }
+
+  deleteTask(task:ToDos){
+    let taskItemsList: ToDos[] = JSON.parse(localStorage.getItem('todos') || '[]');
+    taskItemsList = taskItemsList.filter((item) => item.id !== task.id);  
+    localStorage.setItem('todos', JSON.stringify(taskItemsList));
+    this.getToDoList(); 
+  }
+
 }
